@@ -3,19 +3,15 @@ body {
   justify-content: center;
 }
 .container {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   width: 160px;
-  flex-shrink: 0;
+  height: 160px;
 }
 
 .container div {
   background-color: aquamarine;
   box-sizing: border-box;
-  height: 10px;
-  width: 10px;
   display: inline-block;
-  border: 1px lightgray solid;
 }
 
 div.etched {
