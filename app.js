@@ -13,3 +13,22 @@ function createPixels(num) {
   const columns = `repeat(${num}, 1fr)`;
   container.style["grid-template-columns"] = columns;
 }
+
+function resetGrid() {
+  const div = document.querySelectorAll(".container div");
+  console.log(div);
+  div.forEach(
+    (e) => {
+      e.remove();
+    }
+  )
+}
+
+window.onload = createPixels(16);
+
+const btnReset = document.querySelector("#btn-reset");
+btnReset.addEventListener("click", () => {
+  const gridNum = parseInt(prompt("Choose amount of pixels"));
+  resetGrid();
+  createPixels(gridNum);
+})
