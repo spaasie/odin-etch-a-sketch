@@ -16,7 +16,6 @@ function createPixels(num) {
 
 function resetGrid() {
   const div = document.querySelectorAll(".container div");
-  console.log(div);
   div.forEach(
     (e) => {
       e.remove();
@@ -28,7 +27,13 @@ window.onload = createPixels(16);
 
 const btnReset = document.querySelector("#btn-reset");
 btnReset.addEventListener("click", () => {
-  const gridNum = parseInt(prompt("Choose amount of pixels"));
-  resetGrid();
-  createPixels(gridNum);
+  const userInput = parseInt(prompt("Choose amount of pixels"));
+  if (userInput > 100) {
+    return alert("cant choose above 100 pixels");
+  } else if (isNaN(userInput)) {
+    return alert("can only use numbers");
+  } else {
+    resetGrid();
+    createPixels(userInput);
+  }
 })
