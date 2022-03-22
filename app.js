@@ -17,8 +17,8 @@ function createPixels(num) {
 function resetGrid() {
   const div = document.querySelectorAll(".container div");
   div.forEach(
-    (e) => {
-      e.remove();
+    (element) => {
+      element.remove();
     }
   )
 }
